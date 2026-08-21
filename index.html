@@ -1071,6 +1071,28 @@
                 toast.classList.add('translate-y-20', 'opacity-0');
             }, 3000);
         }
+        // Map tautan folder Drive per kategori bidang tugas
+const driveFolders = {
+  'A': 'https://drive.google.com/drive/folders/1j2j0r6J7F-0wk7BP2eBurTc5Mw-CMw9U?usp=drive_link',
+  'B': 'https://drive.google.com/drive/folders/1sbRocNtBDjfEnHHHY5hFpAhT1GulwND0?usp=drive_link',
+  'C': 'https://drive.google.com/drive/folders/1WeRsVbWwhFyRBJqNa0wyD3NFBG7gO3Zb?usp=drive_link',
+  'D': 'https://drive.google.com/drive/folders/1-RuaaLQwsDn32DXx-r4zfA4YjeYu74Li?usp=drive_link',
+  'E': 'https://drive.google.com/drive/folders/1wjfAObkQARYuk5iOVkRLM1kbIfE8rNC7?usp=drive_link',
+  'F': 'https://drive.google.com/drive/folders/1FN9822_21CG2YxiJxS_2M_e5Ct5FkC3z?usp=drive_link'
+};
+
+// Fungsi untuk membuka folder Drive sesuai kode tugas
+function openFolderByTask(taskId) {
+  if (!taskId) return;
+  const category = taskId.charAt(0).toUpperCase();
+  const targetUrl = driveFolders[category];
+  
+  if (targetUrl) {
+    window.open(targetUrl, '_blank');
+  } else {
+    alert('Folder untuk bidang tugas ini belum diatur.');
+  }
+}
     </script>
 </body>
 </html>
